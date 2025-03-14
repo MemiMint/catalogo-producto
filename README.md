@@ -1,64 +1,70 @@
-Product Catalog - Frontend
+# Product Catalog - Frontend
 
-Este es el repositorio del frontend para la aplicación de catálogo de productos. Proporciona la interfaz de usuario para visualizar y explorar los productos disponibles.
+Este es el repositorio del **frontend** para la aplicación de catálogo de productos. Proporciona la interfaz de usuario para visualizar y explorar los productos disponibles.
 
-🚀 Tecnologías utilizadas
+## 🚀 Tecnologías utilizadas
 
-React con Vite
+- React con Vite
+- TypeScript
+- Tailwind CSS (si aplica)
+- Axios para consumo de API
 
-TypeScript
+## 📂 Estructura del proyecto
 
-Tailwind CSS (si aplica)
-
-Axios para consumo de API
-
-📂 Estructura del proyecto
-
+```
 📦 product-catalog-frontend
 └── src/
-├── assets
-└── modules/
-├── edit-product/
-│ ├── components
-│ ├── hook
-│ └── index.tsx
-├── home/
-│ ├── components
-│ ├── hook
-│ └── index.tsx
-├── product/
-│ ├── components
-│ ├── hook
-│ └── index.tsx
-├── routing/
-│ ├── index.tsx
-│ └── routes.tsx
-└── shared/
-├── components
-├── hooks
-└── utils
+    ├── assets/
+    └── modules/
+        ├── edit-product/
+        │   ├── components/
+        │   ├── hook/
+        │   └── index.tsx
+        ├── home/
+        │   ├── components/
+        │   ├── hook/
+        │   └── index.tsx
+        ├── product/
+        │   ├── components/
+        │   ├── hook/
+        │   └── index.tsx
+        ├── routing/
+        │   ├── index.tsx
+        │   └── routes.tsx
+        └── shared/
+            ├── components/
+            ├── hooks/
+            └── utils/
+```
 
-📡 Backend
+## 📡 Backend
 
-El backend de este proyecto se encuentra en un repositorio separado. Puedes encontrarlo en el siguiente enlace:
-👉 Repositorio del Backend (Reemplaza con el enlace real)
+El backend de este proyecto se encuentra en un **repositorio separado**. Puedes encontrarlo en el siguiente enlace:
+👉 [Repositorio del Backend](#) _(Reemplaza con el enlace real)_
 
-🛠 Instalación y ejecución
+## 🛠 Instalación y ejecución
 
-Clona este repositorio:
+1. Clona este repositorio:
+   ```sh
+   git clone https://github.com/tu-usuario/product-catalog-frontend.git
+   ```
+2. Accede al directorio del proyecto:
+   ```sh
+   cd product-catalog-frontend
+   ```
+3. Instala las dependencias:
+   ```sh
+   npm install
+   ```
+4. Inicia el servidor de desarrollo:
+   ```sh
+   npm run dev
+   ```
 
-git clone https://github.com/tu-usuario/product-catalog-frontend.git
+## 📬 Contribución
 
-Accede al directorio del proyecto:
+Si deseas contribuir a este proyecto, siéntete libre de hacer un **fork** y abrir un **pull request**. 🚀
 
-cd product-catalog-frontend
+---
 
-Instala las dependencias:
-
-npm install
-
-Inicia el servidor de desarrollo:
-
-npm run dev
-
-© 2025 - Product Catalog
+**© 2025 - Product Catalog**
