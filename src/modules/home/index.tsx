@@ -1,7 +1,7 @@
-import { Box, Button, Input, Typography } from "@mui/joy";
-import { ShoppingBag, Search } from "lucide-react";
+import { Box } from "@mui/joy";
 import { ProductCard } from "./components/ProductCard";
 import { Product } from "../shared/types";
+import { Navbar } from "./components/Navbar";
 
 const Page = () => {
   const products: Product[] = [
@@ -87,42 +87,7 @@ const Page = () => {
 
   return (
     <Box sx={{ height: "100vh", p: 4 }}>
-      <Box
-        sx={{
-          width: "100%",
-          borderRadius: 4,
-          bgcolor: "white",
-          mt: 2,
-          p: 2,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 4,
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <Box
-            sx={{
-              p: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: "100%",
-              bgcolor: "#0073E6",
-              color: "white",
-            }}
-          >
-            <ShoppingBag />
-          </Box>
-          <Typography level="title-lg">Catalogo Productos</Typography>
-        </Box>
-        <Input
-          placeholder="Busca un producto"
-          startDecorator={<Search />}
-          name="search"
-          endDecorator={<Button>Search</Button>}
-        />
-      </Box>
+      <Navbar />
       <Box
         borderRadius={4}
         width="100%"
