@@ -1,9 +1,12 @@
+import { lazy } from "react";
 import { RouteProps } from "react-router";
+
+const Home = lazy(() => import("../home"));
 
 export const ROUTES: RouteProps[] = [
   {
     path: "/",
-    element: <>Home</>,
+    element: <Home />,
     index: true,
   },
   {
