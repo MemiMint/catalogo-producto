@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { RouteProps } from "react-router";
 
 const Home = lazy(() => import("../home"));
+const ProductPage = lazy(() => import("../product"));
 
 export const ROUTES: RouteProps[] = [
   {
@@ -11,7 +12,7 @@ export const ROUTES: RouteProps[] = [
   },
   {
     path: "/product/:pid",
-    element: <>Product page</>,
+    element: <ProductPage />,
   },
   {
     path: "/product/:pid/edit",
