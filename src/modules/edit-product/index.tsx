@@ -20,6 +20,8 @@ const Page: React.FC = () => {
   const { pid } = useParams();
 
   const {
+    modalMessage,
+    modalTitle,
     formData,
     onSubmit,
     handleChange,
@@ -117,10 +119,11 @@ const Page: React.FC = () => {
         }}
       />
       <SuccessModal
+        title={modalTitle}
         handleClose={successModal.handleClose}
         handleOpen={successModal.handleOpen}
         isOpen={successModal.modalOpen}
-        message="El producto ha sido eliminado"
+        message={modalMessage}
       />
     </Container>
   );

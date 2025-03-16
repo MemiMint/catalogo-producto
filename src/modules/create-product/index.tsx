@@ -99,7 +99,8 @@ const Page: React.FC = () => {
         </Stack>
       </Box>
       <SuccessModal
-        message="Product creado con exito"
+        title="Producto Registrado!"
+        message="Producto creado con exito"
         isOpen={modalOpen}
         handleClose={handleClose}
         handleOpen={handleOpen}

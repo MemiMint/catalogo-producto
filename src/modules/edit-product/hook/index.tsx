@@ -23,6 +23,9 @@ export const useUpdateProduct = (pid: string) => {
     stock: "",
   });
 
+  const [modalTitle, setModalTitle] = useState<string>("");
+  const [modalMessage, setModalMessage] = useState<string>("");
+
   const successModal = useSuccessModal();
   const confirmModal = useConfirmModal();
 
@@ -82,19 +85,29 @@ export const useUpdateProduct = (pid: string) => {
       fData.get("stock")!.toString()
     );
 
-    console.log(updatedProduct);
+    if (!updatedProduct) {
+      alert("No se puedo actualizar el producto");
+
+      return;
+    }
+
+    setModalTitle("Actualizado!");
+    setModalMessage("El producto ha sido actualizado");
+
+    successModal.handleOpen();
   };
 
   const onDeleteProduct = async () => {
     const deletedProduct = await deleteProduct(parseInt(pid));
 
-    if (!deleteProduct) {
+    if (!deletedProduct) {
       alert("No se pudo eliminar el producto");
 
       return;
     }
 
-    console.log(deletedProduct);
+    setModalTitle("Producto eliminado!");
+    setModalMessage("El producto Ha sido Eliminado");
   };
 
   useEffect(() => {
@@ -102,6 +115,8 @@ export const useUpdateProduct = (pid: string) => {
   }, []);
 
   return {
+    modalMessage,
+    modalTitle,
     formData,
     handleChange,
     handleFileUpload,

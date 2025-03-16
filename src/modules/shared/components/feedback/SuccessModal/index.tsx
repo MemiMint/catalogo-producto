@@ -3,6 +3,7 @@ import { Modal, ModalDialog, Typography, Button, Stack } from "@mui/joy";
 import { useNavigate } from "react-router";
 
 type SuccessModalProps = {
+  title: string;
   message: string;
   isOpen: boolean;
   handleOpen(): void;
@@ -33,7 +34,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = (props) => {
 
         {/* Success Message */}
         <Typography level="h4" component="div" sx={{ mb: 2 }}>
-          Success!
+          {props.title}
         </Typography>
         <Typography level="body-md" sx={{ mb: 3 }}>
           {props.message}
@@ -42,7 +43,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = (props) => {
         {/* Close Button */}
         <Stack direction="row" spacing={2} justifyContent="center">
           <Button variant="solid" color="primary" onClick={() => navigate("/")}>
-            Continue
+            Continar
           </Button>
         </Stack>
       </ModalDialog>
