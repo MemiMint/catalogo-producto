@@ -29,7 +29,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     >
       <CardOverflow onClick={() => navigate(`/product/${product.id}`)}>
         <AspectRatio ratio="3/2">
-          <img src={product.image} alt={product.name} loading="lazy" />
+          <img
+            src={`http://localhost:5026${product.imageUrl}`}
+            alt={product.name}
+            loading="lazy"
+          />
         </AspectRatio>
       </CardOverflow>
       <CardContent onClick={() => navigate(`/product/${product.id}`)}>
