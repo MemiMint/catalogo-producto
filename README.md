@@ -6,7 +6,7 @@ Este es el repositorio del **frontend** para la aplicación de catálogo de prod
 
 - React con Vite
 - TypeScript
-- Tailwind CSS (si aplica)
+- Joy UI
 - Axios para consumo de API
 
 ## 📂 Estructura del proyecto
@@ -16,6 +16,11 @@ Este es el repositorio del **frontend** para la aplicación de catálogo de prod
 └── src/
     ├── assets/
     └── modules/
+        ├── http/
+        │   ├── api/
+        │   ├── utils/
+        │   ├── server.ts
+        │   └── axios.ts
         ├── edit-product/
         │   ├── components/
         │   ├── hook/
@@ -60,11 +65,3 @@ El backend de este proyecto se encuentra en un **repositorio separado**. Puedes 
    ```sh
    npm run dev
    ```
-
-## 📬 Contribución
-
-Si deseas contribuir a este proyecto, siéntete libre de hacer un **fork** y abrir un **pull request**. 🚀
-
----
-
-**© 2025 - Product Catalog**
