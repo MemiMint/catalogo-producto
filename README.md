@@ -51,11 +51,11 @@ El backend de este proyecto se encuentra en un **repositorio separado**. Puedes 
 
 1. Clona este repositorio:
    ```sh
-   git clone https://github.com/tu-usuario/product-catalog-frontend.git
+   git clone https://github.com/MemiMint/catalogo-producto.git
    ```
 2. Accede al directorio del proyecto:
    ```sh
-   cd product-catalog-frontend
+   cd catalogo-product
    ```
 3. Instala las dependencias:
    ```sh
