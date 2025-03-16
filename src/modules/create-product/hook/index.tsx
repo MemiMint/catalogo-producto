@@ -44,11 +44,11 @@ export const useCreateProduct = () => {
 
     const file = formData.imageUrl as File;
 
-    fData.set("file", file);
-    fData.set("name", formData.name);
-    fData.set("description", formData.description);
-    fData.set("price", formData.price);
-    fData.set("stock", formData.stock);
+    fData.append("file", file);
+    fData.append("name", formData.name);
+    fData.append("description", formData.description);
+    fData.append("price", formData.price);
+    fData.append("stock", formData.stock);
 
     const newProduct: Partial<Product> = {
       name: fData.get("name")!.toString(),

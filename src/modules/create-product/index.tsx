@@ -81,7 +81,7 @@ const Page: React.FC = () => {
 
         {/* Image Url */}
         <FormControl>
-          <FormLabel>Product Image</FormLabel>
+          <FormLabel>Imagen del product</FormLabel>
           <Input type="file" name="imageUrl" onChange={handleFileUpload} />
         </FormControl>
 

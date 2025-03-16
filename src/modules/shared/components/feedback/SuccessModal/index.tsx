@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, ModalDialog, Typography, Button, Stack } from "@mui/joy";
+import { useNavigate } from "react-router";
 
 type SuccessModalProps = {
   message: string;
@@ -9,6 +10,8 @@ type SuccessModalProps = {
 };
 
 export const SuccessModal: React.FC<SuccessModalProps> = (props) => {
+  const navigate = useNavigate();
+
   return (
     <Modal open={props.isOpen} onClose={props.handleClose}>
       <ModalDialog
@@ -38,7 +41,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = (props) => {
 
         {/* Close Button */}
         <Stack direction="row" spacing={2} justifyContent="center">
-          <Button variant="solid" color="primary" onClick={props.handleClose}>
+          <Button variant="solid" color="primary" onClick={() => navigate("/")}>
             Continue
           </Button>
         </Stack>
