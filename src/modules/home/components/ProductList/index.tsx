@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box } from "@mui/joy";
+import { Box, Typography } from "@mui/joy";
 import { Product } from "../../../shared/types";
 import { ProductCard } from "../ProductCard";
 
@@ -8,6 +8,24 @@ type ProductCardListProps = {
 };
 
 export const ProductList: FC<ProductCardListProps> = (props) => {
+  const { products } = props;
+
+  if (products.length === 0) {
+    return (
+      <Box
+        width="100%"
+        height="100%"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography level="h4" sx={{ color: "text.secondary" }}>
+          No products available.
+        </Typography>
+      </Box>
+    );
+  }
+
   return (
     <Box
       width="100%"
@@ -17,9 +35,9 @@ export const ProductList: FC<ProductCardListProps> = (props) => {
       flexWrap="wrap"
       sx={{ overflowY: "auto" }}
     >
-      {props.products.map((product, index) => {
-        return <ProductCard key={index} product={product} />;
-      })}
+      {products.map((product, index) => (
+        <ProductCard key={index} product={product} />
+      ))}
     </Box>
   );
 };
