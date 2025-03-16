@@ -45,7 +45,7 @@ Este es el repositorio del **frontend** para la aplicación de catálogo de prod
 ## 📡 Backend
 
 El backend de este proyecto se encuentra en un **repositorio separado**. Puedes encontrarlo en el siguiente enlace:
-👉 [Repositorio del Backend](#) _(Reemplaza con el enlace real)_
+👉 [Repositorio del Backend](https://github.com/MemiMint/catalogo-producto-api)
 
 ## 🛠 Instalación y ejecución
 
