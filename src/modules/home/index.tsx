@@ -1,7 +1,7 @@
 import { Box } from "@mui/joy";
 import { Navbar } from "./components/Navbar";
 import { useHome } from "./components/hook";
-import { Loading } from "../shared/types/components/Loading";
+import { Loading } from "../shared/components/Loading";
 import { ProductList } from "./components/ProductList";
 
 const Page = () => {

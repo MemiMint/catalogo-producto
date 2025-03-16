@@ -4,7 +4,7 @@ import Card from "@mui/joy/Card";
 import Typography from "@mui/joy/Typography";
 import { Container, Box } from "@mui/joy";
 import { useProductDetails } from "./hook";
-import { Loading } from "../shared/types/components/Loading";
+import { Loading } from "../shared/components/Loading";
 import { CardDetail } from "./components";
 
 const Page: React.FC = () => {
