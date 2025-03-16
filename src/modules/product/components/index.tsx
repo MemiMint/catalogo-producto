@@ -1,8 +1,11 @@
 import { FC } from "react";
 import { Box, Typography, Button, AspectRatio } from "@mui/joy";
 import { Product } from "../../shared/types";
+import { useNavigate } from "react-router";
 
 export const CardDetail: FC<{ product: Product }> = ({ product }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* Product Image */}
@@ -40,7 +43,13 @@ export const CardDetail: FC<{ product: Product }> = ({ product }) => {
           </Typography>
         </Box>
 
-        <Button variant="solid" color="primary" size="lg" sx={{ mt: 3 }}>
+        <Button
+          onClick={() => navigate(`/product/${product.id}/edit`)}
+          variant="solid"
+          color="primary"
+          size="lg"
+          sx={{ mt: 3 }}
+        >
           Editar
         </Button>
       </Box>
