@@ -55,7 +55,7 @@ El backend de este proyecto se encuentra en un **repositorio separado**. Puedes 
    ```
 2. Accede al directorio del proyecto:
    ```sh
-   cd catalogo-product
+   cd catalogo-producto
    ```
 3. Instala las dependencias:
    ```sh
