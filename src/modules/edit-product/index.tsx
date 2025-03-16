@@ -14,6 +14,7 @@ import {
 import { useUpdateProduct } from "./hook";
 import { ConfirmActionModal } from "../shared/components/feedback/ConfirmModal";
 import { SuccessModal } from "../shared/components/feedback/SuccessModal";
+import { isFormValid } from "../shared/utils/is-form-valid";
 
 const Page: React.FC = () => {
   const { pid } = useParams();
@@ -86,7 +87,13 @@ const Page: React.FC = () => {
 
         {/* Buttons */}
         <Stack direction="row" justifyContent="space-between">
-          <Button onClick={onSubmit} variant="solid" color="primary" size="lg">
+          <Button
+            disabled={!isFormValid(formData)}
+            onClick={onSubmit}
+            variant="solid"
+            color="primary"
+            size="lg"
+          >
             Guardar Cambios
           </Button>
           <Button
