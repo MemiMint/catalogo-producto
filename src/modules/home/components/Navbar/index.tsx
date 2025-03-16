@@ -1,10 +1,16 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useNavigate } from "react-router";
 import { Box, Typography, Input, Stack, Button } from "@mui/joy";
 import { Search, ShoppingBag } from "lucide-react";
 
-export const Navbar: FC = () => {
+type NavbarProps = {
+  onSearch: (search: string) => void;
+};
+
+export const Navbar: FC<NavbarProps> = (props) => {
   const navigate = useNavigate();
+
+  const [search, setSearch] = useState<string>("");
 
   return (
     <Box
@@ -41,7 +47,11 @@ export const Navbar: FC = () => {
           placeholder="Busca un producto"
           startDecorator={<Search />}
           name="search"
-          endDecorator={<Button>Buscar</Button>}
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          endDecorator={
+            <Button onClick={() => props.onSearch(search)}>Buscar</Button>
+          }
         />
         <Button onClick={() => navigate("/product/create")}>
           Registrar Producto
