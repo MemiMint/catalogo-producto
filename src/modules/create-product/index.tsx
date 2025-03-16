@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState } from "react";
 import {
   Container,
   Box,
@@ -11,39 +10,20 @@ import {
   Button,
   Stack,
 } from "@mui/joy";
+import { useCreateProduct } from "./hook";
+import { SuccessModal } from "../shared/components/feedback/SuccessModal";
+import { isFormValid } from "../shared/utils/is-form-valid";
 
 const Page: React.FC = () => {
-  // State for form inputs
-  const [formData, setFormData] = useState({
-    nombre: "",
-    descripcion: "",
-    precio: "",
-    stock: "",
-  });
-
-  // Handle input changes
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (
-      !formData.nombre ||
-      !formData.descripcion ||
-      !formData.precio ||
-      !formData.stock
-    ) {
-      alert("Todos los campos son obligatorios");
-      return;
-    }
-
-    console.log("Product submitted:", formData);
-    alert("Producto agregado con éxito");
-  };
+  const {
+    formData,
+    modalOpen,
+    handleChange,
+    handleFileUpload,
+    onSubmit,
+    handleClose,
+    handleOpen,
+  } = useCreateProduct();
 
   return (
     <Container sx={{ maxWidth: 500, mt: 4 }}>
@@ -51,17 +31,13 @@ const Page: React.FC = () => {
         <Typography level="h2">Agregar Producto</Typography>
       </Box>
 
-      <Box
-        component="form"
-        onSubmit={handleSubmit}
-        sx={{ display: "flex", flexDirection: "column", gap: 2 }}
-      >
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         {/* Nombre */}
         <FormControl required>
           <FormLabel>Nombre</FormLabel>
           <Input
-            name="nombre"
-            value={formData.nombre}
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             placeholder="Nombre del producto"
           />
@@ -71,8 +47,8 @@ const Page: React.FC = () => {
         <FormControl required>
           <FormLabel>Descripción</FormLabel>
           <Textarea
-            name="descripcion"
-            value={formData.descripcion}
+            name="description"
+            value={formData.description}
             onChange={handleChange}
             placeholder="Descripción del producto"
             minRows={3}
@@ -84,8 +60,8 @@ const Page: React.FC = () => {
           <FormLabel>Precio</FormLabel>
           <Input
             type="number"
-            name="precio"
-            value={formData.precio}
+            name="price"
+            value={formData.price}
             onChange={handleChange}
             placeholder="Precio en USD"
           />
@@ -103,13 +79,31 @@ const Page: React.FC = () => {
           />
         </FormControl>
 
+        {/* Image Url */}
+        <FormControl>
+          <FormLabel>Product Image</FormLabel>
+          <Input type="file" name="imageUrl" onChange={handleFileUpload} />
+        </FormControl>
+
         {/* Submit Button */}
         <Stack direction="row" justifyContent="center">
-          <Button type="submit" variant="solid" color="primary" size="lg">
+          <Button
+            disabled={!isFormValid(formData)}
+            onClick={onSubmit}
+            variant="solid"
+            color="primary"
+            size="lg"
+          >
             Guardar Producto
           </Button>
         </Stack>
       </Box>
+      <SuccessModal
+        message="Product creado con exito"
+        isOpen={modalOpen}
+        handleClose={handleClose}
+        handleOpen={handleOpen}
+      />
     </Container>
   );
 };
